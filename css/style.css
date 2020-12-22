@@ -1,0 +1,31 @@
+body {
+    background: url("../images/login.jpg") no-repeat center calc(50% + 54px);
+}
+
+body > .container {
+    padding-top: 100px;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.password-control {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../images/gla.svg") 0 0 no-repeat;
+}
+
+.password-control.view {
+    background: url("../images/gl.svg") 0 0 no-repeat;
+}

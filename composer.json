@@ -1,0 +1,15 @@
+{
+    "name": "deonoize/el-catalog.loc",
+    "authors": [
+        {
+            "name": "deonoize",
+            "email": "mr.deo.noize@gmail.com"
+        }
+    ],
+    "require": {
+        "doctrine/dbal": "^3.0",
+        "symfony/dotenv": "^5.2",
+        "larapack/dd": "^1.1",
+        "filp/whoops": "^2.9"
+    }
+}
