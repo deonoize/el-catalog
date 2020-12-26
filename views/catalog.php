@@ -134,7 +134,7 @@
                                                class="custom-control-input"
                                                id="filterPropCheckbox0_1"
                                                value="name"
-                                            <?= $_GET['order'] === 'name' ? 'checked' : '' ?>>
+                                            <?= isset($_GET['order']) && $_GET['order'] === 'name' ? 'checked' : '' ?>>
                                         <label class="custom-control-label"
                                                for="filterPropCheckbox0_1">по наименованию</label>
                                     </div>

@@ -14,17 +14,17 @@ foreach ($categoriesFormDB as $category) {
 
 //Создаем запрос для получения товаров
 $productsQueryBuilder = new QueryBuilder($conn);
-$productsQueryBuilder->select('p.*', 'c.name as category_name')->from('product', 'p')->leftJoin(
+$productsQueryBuilder->select('p.*', 'ANY_VALUE(c.name) as category_name')->from('product', 'p')->leftJoin(
     'p',
     '`product-category`',
     'pc',
     'p.id=pc.id_product'
-)->leftJoin('p', 'category', 'c', 'c.id=pc.id_category')->leftJoin(
+)->leftJoin('p', 'category', 'c', 'c.id=pc.id_category')->rightJoin(
     'p',
     '`product-characteristic`',
     'ppr',
     'p.id=ppr.id_product'
-)->rightJoin('p', 'characteristic', 'pr', 'pr.id=ppr.id_characteristic');
+)->leftJoin('p', 'characteristic', 'pr', 'pr.id=ppr.id_characteristic');
 
 if (isset($_GET['category'])) {
     $productsQueryBuilder->andWhere('c.id=:cat_id');

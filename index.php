@@ -16,6 +16,11 @@ switch ($path) {
         unset($_SESSION['user_hash']);
         redirect('/login');
         break;
+    case 'product':
+        redirect('/login', !(isset($user) && $user));
+        redirect('/', !isset($_GET['id']));
+        require __DIR__.'/pages/product.php';
+        break;
     case '':
         redirect('/login', !(isset($user) && $user));
         require __DIR__.'/pages/catalog.php';
